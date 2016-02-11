@@ -11,6 +11,10 @@ import Cocoa
 @NSApplicationMain
 class AppDelegate: NSObject, NSApplicationDelegate {
 
+    @IBOutlet weak var statusMenu: NSMenu!
+
+    let statusItem = NSStatusBar.systemStatusBar().statusItemWithLength(NSVariableStatusItemLength)
+
 
     func applicationDidFinishLaunching(aNotification: NSNotification) {
         // Insert code here to initialize your application
@@ -26,6 +30,14 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 
     func applicationWillTerminate(aNotification: NSNotification) {
         // Insert code here to tear down your application
+    }
+
+    override func awakeFromNib() {
+        let icon = NSImage(named: NSImageNameQuickLookTemplate)
+        icon?.template = true
+        statusItem.image = icon
+        statusItem.menu = statusMenu
+        statusItem.toolTip = "\(Global.Application.bundleName) \(Global.Application.bundleVersion)"
     }
 
 
