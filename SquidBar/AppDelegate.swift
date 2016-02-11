@@ -41,6 +41,10 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         statusItem.toolTip = "\(Global.Application.bundleName) \(Global.Application.bundleVersion)"
     }
 
+    @IBAction func clickQuit(sender: NSMenuItem) {
+        NSApplication.sharedApplication().terminate(self)
+    }
+
     @IBAction func openAbout(sender: NSMenuItem) {
         NSApplication.sharedApplication().orderFrontStandardAboutPanel(sender)
         NSApplication.sharedApplication().activateIgnoringOtherApps(true)

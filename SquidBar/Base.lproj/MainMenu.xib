@@ -50,6 +50,9 @@
                 <menuItem isSeparatorItem="YES" id="WeY-l4-D9P"/>
                 <menuItem title="Quit" id="GUy-YT-pkE">
                     <modifierMask key="keyEquivalentModifierMask"/>
+                    <connections>
+                        <action selector="clickQuit:" target="Voe-Tx-rLC" id="4Eu-Vd-QUc"/>
+                    </connections>
                 </menuItem>
             </items>
             <point key="canvasLocation" x="809.5" y="204.5"/>
