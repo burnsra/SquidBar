@@ -1,0 +1,388 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		00CD1F371C6CEAD80093BB95 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00CD1F361C6CEAD80093BB95 /* AppDelegate.swift */; };
+		00CD1F391C6CEAD80093BB95 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 00CD1F381C6CEAD80093BB95 /* Assets.xcassets */; };
+		00CD1F3C1C6CEAD80093BB95 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 00CD1F3A1C6CEAD80093BB95 /* MainMenu.xib */; };
+		00CD1F471C6CEAD80093BB95 /* SquidBarTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00CD1F461C6CEAD80093BB95 /* SquidBarTests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		00CD1F431C6CEAD80093BB95 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 00CD1F2B1C6CEAD80093BB95 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 00CD1F321C6CEAD80093BB95;
+			remoteInfo = SquidBar;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		00CD1F331C6CEAD80093BB95 /* SquidBar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SquidBar.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		00CD1F361C6CEAD80093BB95 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		00CD1F381C6CEAD80093BB95 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		00CD1F3B1C6CEAD80093BB95 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
+		00CD1F3D1C6CEAD80093BB95 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		00CD1F421C6CEAD80093BB95 /* SquidBarTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SquidBarTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		00CD1F461C6CEAD80093BB95 /* SquidBarTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SquidBarTests.swift; sourceTree = "<group>"; };
+		00CD1F481C6CEAD80093BB95 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		00CD1F301C6CEAD80093BB95 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		00CD1F3F1C6CEAD80093BB95 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		00CD1F2A1C6CEAD80093BB95 = {
+			isa = PBXGroup;
+			children = (
+				00CD1F351C6CEAD80093BB95 /* SquidBar */,
+				00CD1F451C6CEAD80093BB95 /* SquidBarTests */,
+				00CD1F341C6CEAD80093BB95 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		00CD1F341C6CEAD80093BB95 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				00CD1F331C6CEAD80093BB95 /* SquidBar.app */,
+				00CD1F421C6CEAD80093BB95 /* SquidBarTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		00CD1F351C6CEAD80093BB95 /* SquidBar */ = {
+			isa = PBXGroup;
+			children = (
+				00CD1F361C6CEAD80093BB95 /* AppDelegate.swift */,
+				00CD1F381C6CEAD80093BB95 /* Assets.xcassets */,
+				00CD1F3A1C6CEAD80093BB95 /* MainMenu.xib */,
+				00CD1F3D1C6CEAD80093BB95 /* Info.plist */,
+			);
+			path = SquidBar;
+			sourceTree = "<group>";
+		};
+		00CD1F451C6CEAD80093BB95 /* SquidBarTests */ = {
+			isa = PBXGroup;
+			children = (
+				00CD1F461C6CEAD80093BB95 /* SquidBarTests.swift */,
+				00CD1F481C6CEAD80093BB95 /* Info.plist */,
+			);
+			path = SquidBarTests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		00CD1F321C6CEAD80093BB95 /* SquidBar */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 00CD1F4B1C6CEAD80093BB95 /* Build configuration list for PBXNativeTarget "SquidBar" */;
+			buildPhases = (
+				00CD1F2F1C6CEAD80093BB95 /* Sources */,
+				00CD1F301C6CEAD80093BB95 /* Frameworks */,
+				00CD1F311C6CEAD80093BB95 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SquidBar;
+			productName = SquidBar;
+			productReference = 00CD1F331C6CEAD80093BB95 /* SquidBar.app */;
+			productType = "com.apple.product-type.application";
+		};
+		00CD1F411C6CEAD80093BB95 /* SquidBarTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 00CD1F4E1C6CEAD80093BB95 /* Build configuration list for PBXNativeTarget "SquidBarTests" */;
+			buildPhases = (
+				00CD1F3E1C6CEAD80093BB95 /* Sources */,
+				00CD1F3F1C6CEAD80093BB95 /* Frameworks */,
+				00CD1F401C6CEAD80093BB95 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				00CD1F441C6CEAD80093BB95 /* PBXTargetDependency */,
+			);
+			name = SquidBarTests;
+			productName = SquidBarTests;
+			productReference = 00CD1F421C6CEAD80093BB95 /* SquidBarTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		00CD1F2B1C6CEAD80093BB95 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0720;
+				LastUpgradeCheck = 0720;
+				ORGANIZATIONNAME = "Robert Burns";
+				TargetAttributes = {
+					00CD1F321C6CEAD80093BB95 = {
+						CreatedOnToolsVersion = 7.2.1;
+					};
+					00CD1F411C6CEAD80093BB95 = {
+						CreatedOnToolsVersion = 7.2.1;
+						TestTargetID = 00CD1F321C6CEAD80093BB95;
+					};
+				};
+			};
+			buildConfigurationList = 00CD1F2E1C6CEAD80093BB95 /* Build configuration list for PBXProject "SquidBar" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 00CD1F2A1C6CEAD80093BB95;
+			productRefGroup = 00CD1F341C6CEAD80093BB95 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				00CD1F321C6CEAD80093BB95 /* SquidBar */,
+				00CD1F411C6CEAD80093BB95 /* SquidBarTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		00CD1F311C6CEAD80093BB95 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				00CD1F391C6CEAD80093BB95 /* Assets.xcassets in Resources */,
+				00CD1F3C1C6CEAD80093BB95 /* MainMenu.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		00CD1F401C6CEAD80093BB95 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		00CD1F2F1C6CEAD80093BB95 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				00CD1F371C6CEAD80093BB95 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		00CD1F3E1C6CEAD80093BB95 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				00CD1F471C6CEAD80093BB95 /* SquidBarTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		00CD1F441C6CEAD80093BB95 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 00CD1F321C6CEAD80093BB95 /* SquidBar */;
+			targetProxy = 00CD1F431C6CEAD80093BB95 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		00CD1F3A1C6CEAD80093BB95 /* MainMenu.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				00CD1F3B1C6CEAD80093BB95 /* Base */,
+			);
+			name = MainMenu.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		00CD1F491C6CEAD80093BB95 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		00CD1F4A1C6CEAD80093BB95 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		00CD1F4C1C6CEAD80093BB95 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = SquidBar/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = me.robertburns.osx.SquidBar;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		00CD1F4D1C6CEAD80093BB95 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = SquidBar/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = me.robertburns.osx.SquidBar;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		00CD1F4F1C6CEAD80093BB95 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = SquidBarTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = me.robertburns.osx.SquidBarTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SquidBar.app/Contents/MacOS/SquidBar";
+			};
+			name = Debug;
+		};
+		00CD1F501C6CEAD80093BB95 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = SquidBarTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = me.robertburns.osx.SquidBarTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SquidBar.app/Contents/MacOS/SquidBar";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		00CD1F2E1C6CEAD80093BB95 /* Build configuration list for PBXProject "SquidBar" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				00CD1F491C6CEAD80093BB95 /* Debug */,
+				00CD1F4A1C6CEAD80093BB95 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		00CD1F4B1C6CEAD80093BB95 /* Build configuration list for PBXNativeTarget "SquidBar" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				00CD1F4C1C6CEAD80093BB95 /* Debug */,
+				00CD1F4D1C6CEAD80093BB95 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		00CD1F4E1C6CEAD80093BB95 /* Build configuration list for PBXNativeTarget "SquidBarTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				00CD1F4F1C6CEAD80093BB95 /* Debug */,
+				00CD1F501C6CEAD80093BB95 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 00CD1F2B1C6CEAD80093BB95 /* Project object */;
+}
