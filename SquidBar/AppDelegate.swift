@@ -41,6 +41,11 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         statusItem.toolTip = "\(Global.Application.bundleName) \(Global.Application.bundleVersion)"
     }
 
+    @IBAction func openAbout(sender: NSMenuItem) {
+        NSApplication.sharedApplication().orderFrontStandardAboutPanel(sender)
+        NSApplication.sharedApplication().activateIgnoringOtherApps(true)
+    }
+
     @IBAction func openPreferences(sender: NSMenuItem) {
         self.preferencesWindow!.orderFront(self)
         NSApplication.sharedApplication().activateIgnoringOtherApps(true)

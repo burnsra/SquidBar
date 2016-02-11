@@ -40,6 +40,9 @@
                 <menuItem isSeparatorItem="YES" id="cbX-kT-zYb"/>
                 <menuItem title="About" id="nbQ-9e-vFo">
                     <modifierMask key="keyEquivalentModifierMask"/>
+                    <connections>
+                        <action selector="openAbout:" target="Voe-Tx-rLC" id="dMv-xY-wsL"/>
+                    </connections>
                 </menuItem>
                 <menuItem title="Documentation..." id="XrE-9G-vIf">
                     <modifierMask key="keyEquivalentModifierMask"/>
