@@ -14,6 +14,7 @@
         <customObject id="-3" userLabel="Application" customClass="NSObject"/>
         <customObject id="Voe-Tx-rLC" customClass="AppDelegate" customModule="SquidBar" customModuleProvider="target">
             <connections>
+                <outlet property="preferencesWindow" destination="cTL-ay-T7S" id="C7a-cb-wRe"/>
                 <outlet property="statusMenu" destination="6Dc-aH-bfw" id="lEb-cI-TWP"/>
             </connections>
         </customObject>
@@ -32,6 +33,9 @@
                 <menuItem isSeparatorItem="YES" id="dcE-TC-IZ9"/>
                 <menuItem title="Preferences..." id="bZx-6X-Ore">
                     <modifierMask key="keyEquivalentModifierMask"/>
+                    <connections>
+                        <action selector="openPreferences:" target="Voe-Tx-rLC" id="4Pb-dX-Xak"/>
+                    </connections>
                 </menuItem>
                 <menuItem isSeparatorItem="YES" id="cbX-kT-zYb"/>
                 <menuItem title="About" id="nbQ-9e-vFo">

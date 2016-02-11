@@ -12,6 +12,7 @@ import Cocoa
 class AppDelegate: NSObject, NSApplicationDelegate {
 
     @IBOutlet weak var statusMenu: NSMenu!
+    @IBOutlet weak var preferencesWindow: NSWindow!
 
     let statusItem = NSStatusBar.systemStatusBar().statusItemWithLength(NSVariableStatusItemLength)
 
@@ -38,6 +39,11 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         statusItem.image = icon
         statusItem.menu = statusMenu
         statusItem.toolTip = "\(Global.Application.bundleName) \(Global.Application.bundleVersion)"
+    }
+
+    @IBAction func openPreferences(sender: NSMenuItem) {
+        self.preferencesWindow!.orderFront(self)
+        NSApplication.sharedApplication().activateIgnoringOtherApps(true)
     }
 
 
