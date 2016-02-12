@@ -179,6 +179,9 @@ DQ
                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                             <font key="font" metaFont="system"/>
                         </buttonCell>
+                        <connections>
+                            <action selector="toggleLoginItem:" target="Voe-Tx-rLC" id="uV9-9c-yH2"/>
+                        </connections>
                     </button>
                 </subviews>
             </view>

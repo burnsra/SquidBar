@@ -41,6 +41,10 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         statusItem.toolTip = "\(Global.Application.bundleName) \(Global.Application.bundleVersion)"
     }
 
+    @IBAction func toggleLoginItem(sender: NSButton) {
+        setLaunchAtStartup(Bool(sender.state))
+    }
+
     @IBAction func clickQuit(sender: NSMenuItem) {
         NSApplication.sharedApplication().terminate(self)
     }
