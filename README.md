@@ -33,7 +33,7 @@ Preferences Window
 
 After installing Squid with **[Homebrew](http://brew.sh/)**
 
-- The squid exectuable is located at `/usr/local/opt/squid/sbin/squid`
+- The squid executable is located at `/usr/local/opt/squid/sbin/squid`
 - The squid configuration file is located at `/usr/local/etc/squid.conf`
 
 ## Contributions
