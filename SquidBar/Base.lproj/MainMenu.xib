@@ -15,20 +15,29 @@
         <customObject id="Voe-Tx-rLC" customClass="AppDelegate" customModule="SquidBar" customModuleProvider="target">
             <connections>
                 <outlet property="preferencesWindow" destination="cTL-ay-T7S" id="C7a-cb-wRe"/>
+                <outlet property="serverStartMenuItem" destination="FYs-Az-aDL" id="5ta-8Z-cqm"/>
+                <outlet property="serverStatusMenuItem" destination="g4w-l2-lc3" id="r56-4U-org"/>
+                <outlet property="serverStopMenuItem" destination="CP2-CI-jAz" id="qKH-o7-PH5"/>
                 <outlet property="statusMenu" destination="6Dc-aH-bfw" id="lEb-cI-TWP"/>
             </connections>
         </customObject>
         <customObject id="YLy-65-1bz" customClass="NSFontManager"/>
         <menu title="SquidLauncher Menu" id="6Dc-aH-bfw" userLabel="Status Menu">
             <items>
-                <menuItem title="Listening Status..." id="g4w-l2-lc3">
+                <menuItem title="Getting status..." id="g4w-l2-lc3">
                     <modifierMask key="keyEquivalentModifierMask"/>
                 </menuItem>
-                <menuItem title="Start Squid Server" id="FYs-Az-aDL">
+                <menuItem title="Start Squid Server" hidden="YES" id="FYs-Az-aDL">
                     <modifierMask key="keyEquivalentModifierMask"/>
+                    <connections>
+                        <action selector="serverStart:" target="Voe-Tx-rLC" id="5zT-ay-fSG"/>
+                    </connections>
                 </menuItem>
-                <menuItem title="Stop Squid Server" id="CP2-CI-jAz">
+                <menuItem title="Stop Squid Server" hidden="YES" id="CP2-CI-jAz">
                     <modifierMask key="keyEquivalentModifierMask"/>
+                    <connections>
+                        <action selector="serverStop:" target="Voe-Tx-rLC" id="dnX-Xp-GVx"/>
+                    </connections>
                 </menuItem>
                 <menuItem isSeparatorItem="YES" id="dcE-TC-IZ9"/>
                 <menuItem title="Preferences..." id="bZx-6X-Ore">

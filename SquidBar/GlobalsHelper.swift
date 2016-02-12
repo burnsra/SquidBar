@@ -18,6 +18,9 @@ struct Global {
 
         static let pgrepExecutable: String = "/usr/bin/pgrep"
         static let squidProcess: String = "squid"
+
+        static let statusListening: String = "Listening on"
+        static let statusUnknown: String = "Getting status..."
     }
 
 

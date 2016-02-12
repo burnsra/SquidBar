@@ -13,8 +13,13 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 
     @IBOutlet weak var statusMenu: NSMenu!
     @IBOutlet weak var preferencesWindow: NSWindow!
+    @IBOutlet weak var serverStatusMenuItem: NSMenuItem!
+    @IBOutlet weak var serverStartMenuItem: NSMenuItem!
+    @IBOutlet weak var serverStopMenuItem: NSMenuItem!
 
     let statusItem = NSStatusBar.systemStatusBar().statusItemWithLength(NSVariableStatusItemLength)
+    let preferenceController = PreferenceController()
+    let squidController = SquidController()
 
 
     func applicationDidFinishLaunching(aNotification: NSNotification) {
@@ -23,6 +28,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 
     func applicationDidBecomeActive(notification: NSNotification) {
         // Insert code here to enter the foreground state
+        updateStatusMenuItems()
     }
 
     func applicationWillResignActive(notification: NSNotification) {
@@ -57,6 +63,45 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     @IBAction func openPreferences(sender: NSMenuItem) {
         self.preferencesWindow!.orderFront(self)
         NSApplication.sharedApplication().activateIgnoringOtherApps(true)
+    }
+
+    @IBAction func serverStart(sender: NSMenuItem) {
+        resetServerStatusMenuItem()
+        squidController.restartSquid()
+        delay(8) {
+            self.updateStatusMenuItems()
+        }
+    }
+
+    @IBAction func serverStop(sender: NSMenuItem) {
+        resetServerStatusMenuItem()
+        squidController.stopSquid()
+        delay(4) {
+            self.updateStatusMenuItems()
+        }
+    }
+
+    func resetServerStatusMenuItem() {
+        self.serverStatusMenuItem.title = "\(Global.Application.statusUnknown)"
+        self.serverStatusMenuItem.hidden = false
+        self.serverStartMenuItem.hidden = true
+        self.serverStopMenuItem.hidden = true
+    }
+
+    func updateStatusMenuItems() {
+        if squidController.isSquidRunning() {
+            self.serverStatusMenuItem.hidden = false
+            self.serverStartMenuItem.hidden = true
+            self.serverStopMenuItem.hidden = false
+            if let port = squidController.getPort() {
+                self.serverStatusMenuItem.title = "\(Global.Application.statusListening) \(port)"
+            }
+        } else {
+            self.serverStatusMenuItem.title = "\(Global.Application.statusUnknown)"
+            self.serverStatusMenuItem.hidden = true
+            self.serverStartMenuItem.hidden = false
+            self.serverStopMenuItem.hidden = true
+        }
     }
 
 

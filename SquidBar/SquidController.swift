@@ -55,9 +55,8 @@ class SquidController: NSObject {
     }
 
     func restartSquid() {
-        let time = dispatch_time(dispatch_time_t(DISPATCH_TIME_NOW), 6 * Int64(NSEC_PER_SEC))
         self.stopSquid()
-        dispatch_after(time, dispatch_get_main_queue()) {
+        delay(6) {
             self.startSquid()
         }
     }
