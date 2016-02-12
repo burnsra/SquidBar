@@ -40,6 +40,9 @@ class AppDelegate: NSObject, NSApplicationDelegate {
                 squidController.startSquid()
             }
         }
+        delay(4) {
+            self.updateStatusMenuItems()
+        }
     }
 
     func applicationDidBecomeActive(notification: NSNotification) {
