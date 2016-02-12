@@ -92,6 +92,12 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         NSApplication.sharedApplication().activateIgnoringOtherApps(true)
     }
 
+    @IBAction func openDocumentation(sender: NSMenuItem) {
+        if let url: NSURL = NSURL(string: "\(Global.Application.bundleProject)") {
+            NSWorkspace.sharedWorkspace().openURL(url)
+        }
+    }
+
     @IBAction func openPreferences(sender: NSMenuItem) {
         self.preferencesWindow!.orderFront(self)
         NSApplication.sharedApplication().activateIgnoringOtherApps(true)

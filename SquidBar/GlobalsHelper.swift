@@ -15,6 +15,7 @@ struct Global {
         static let bundleName: String = NSBundle.mainBundle().objectForInfoDictionaryKey("CFBundleName") as! String
         static let bundleVersion: String = NSBundle.mainBundle().objectForInfoDictionaryKey("CFBundleShortVersionString") as! String
         static let bundleBuild: String = NSBundle.mainBundle().objectForInfoDictionaryKey("CFBundleVersion") as! String
+        static let bundleProject: String = "https://github.com/burnsra/\(Global.Application.bundleName)"
 
         static let pgrepExecutable: String = "/usr/bin/pgrep"
         static let squidProcess: String = "squid"
