@@ -31,14 +31,12 @@
                 <menuItem title="Getting status..." id="g4w-l2-lc3">
                     <modifierMask key="keyEquivalentModifierMask"/>
                 </menuItem>
-                <menuItem title="Start Squid Server" hidden="YES" id="FYs-Az-aDL">
-                    <modifierMask key="keyEquivalentModifierMask"/>
+                <menuItem title="Start Squid Server" hidden="YES" keyEquivalent="s" id="FYs-Az-aDL">
                     <connections>
                         <action selector="serverStart:" target="Voe-Tx-rLC" id="5zT-ay-fSG"/>
                     </connections>
                 </menuItem>
-                <menuItem title="Stop Squid Server" hidden="YES" id="CP2-CI-jAz">
-                    <modifierMask key="keyEquivalentModifierMask"/>
+                <menuItem title="Stop Squid Server" hidden="YES" keyEquivalent="S" id="CP2-CI-jAz">
                     <connections>
                         <action selector="serverStop:" target="Voe-Tx-rLC" id="dnX-Xp-GVx"/>
                     </connections>
