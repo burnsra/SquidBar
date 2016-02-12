@@ -155,7 +155,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     }
 
     @IBAction func browseExecutableLoc(sender: NSButton) {
-        executableFileTextField.stringValue = getDir(true, canChooseDirectories: true)
+        executableFileTextField.stringValue = getDir(true, canChooseDirectories: false)
         preferenceController.squidExecutable = executableFileTextField.stringValue
         preferenceController.synchronizePreferences()
     }

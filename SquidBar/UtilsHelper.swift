@@ -31,6 +31,7 @@ func getDir(canChooseFiles: Bool, canChooseDirectories: Bool) -> String {
     browser.allowsMultipleSelection = false
     browser.canChooseFiles = canChooseFiles
     browser.canChooseDirectories = canChooseDirectories
+    browser.showsHiddenFiles = true
 
     let i = browser.runModal()
 
