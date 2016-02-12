@@ -7,6 +7,7 @@
 //
 
 import Cocoa
+import EonilFileSystemEvents
 
 @NSApplicationMain
 class AppDelegate: NSObject, NSApplicationDelegate {
@@ -27,6 +28,9 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     let preferenceController = PreferenceController()
     let squidController = SquidController()
 
+    var	monitor = nil as FileSystemEventMonitor?
+    var	queue = dispatch_get_global_queue(QOS_CLASS_BACKGROUND, 0)
+
 
     func applicationDidFinishLaunching(aNotification: NSNotification) {
         // Insert code here to initialize your application
@@ -40,6 +44,20 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 
     func applicationDidBecomeActive(notification: NSNotification) {
         // Insert code here to enter the foreground state
+        let	onEvents = { (events:[FileSystemEvent]) -> () in
+            dispatch_async(dispatch_get_main_queue()) {
+                for ev in events {
+                    if (ev.path.containsString("resolv.conf")) {
+                        showNotification(Global.Application.statusRestartingDNS)
+                        if (self.preferenceController.squidWatchNetwork == true) {
+                            self.squidController.restartSquid()
+                        }
+                    }
+                }
+            }
+        }
+        monitor	= FileSystemEventMonitor(pathsToWatch: ["/etc/resolv.conf", "/private/var/run/resolv.conf"], latency: 0, watchRoot: false, queue: queue, callback: onEvents)
+
         updateStatusMenuItems()
     }
 
@@ -49,6 +67,8 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 
     func applicationWillTerminate(aNotification: NSNotification) {
         // Insert code here to tear down your application
+        monitor	= nil
+        squidController.stopSquid()
     }
 
     override func awakeFromNib() {

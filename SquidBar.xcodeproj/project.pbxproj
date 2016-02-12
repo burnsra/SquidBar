@@ -16,6 +16,8 @@
 		00CD1F561C6CFCD30093BB95 /* LoginHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00CD1F551C6CFCD30093BB95 /* LoginHelper.swift */; };
 		00CD1F581C6CFFF40093BB95 /* UtilsHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00CD1F571C6CFFF40093BB95 /* UtilsHelper.swift */; };
 		00CD1F5A1C6D085A0093BB95 /* SquidController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00CD1F591C6D085A0093BB95 /* SquidController.swift */; };
+		00CD1F6E1C6D398E0093BB95 /* EonilFileSystemEvents.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00CD1F671C6D397C0093BB95 /* EonilFileSystemEvents.framework */; };
+		00CD1F701C6D39A80093BB95 /* EonilFileSystemEvents.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 00CD1F671C6D397C0093BB95 /* EonilFileSystemEvents.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -26,7 +28,48 @@
 			remoteGlobalIDString = 00CD1F321C6CEAD80093BB95;
 			remoteInfo = SquidBar;
 		};
+		00CD1F661C6D397C0093BB95 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 00CD1F5F1C6D397C0093BB95 /* EonilFileSystemEvents.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 45D970A61A1569090037649F;
+			remoteInfo = EonilFileSystemEvents;
+		};
+		00CD1F681C6D397C0093BB95 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 00CD1F5F1C6D397C0093BB95 /* EonilFileSystemEvents.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 45D970961A155DD50037649F;
+			remoteInfo = InternalTester;
+		};
+		00CD1F6A1C6D397C0093BB95 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 00CD1F5F1C6D397C0093BB95 /* EonilFileSystemEvents.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 45DA95801A69F1610091410B;
+			remoteInfo = InternalTester4;
+		};
+		00CD1F6C1C6D397C0093BB95 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 00CD1F5F1C6D397C0093BB95 /* EonilFileSystemEvents.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 45BF99C51A131E3A004E4E2E;
+			remoteInfo = TestdriveApp;
+		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		00CD1F6F1C6D399B0093BB95 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				00CD1F701C6D39A80093BB95 /* EonilFileSystemEvents.framework in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		00CD1F331C6CEAD80093BB95 /* SquidBar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SquidBar.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -42,6 +85,7 @@
 		00CD1F551C6CFCD30093BB95 /* LoginHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginHelper.swift; sourceTree = "<group>"; };
 		00CD1F571C6CFFF40093BB95 /* UtilsHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UtilsHelper.swift; sourceTree = "<group>"; };
 		00CD1F591C6D085A0093BB95 /* SquidController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SquidController.swift; sourceTree = "<group>"; };
+		00CD1F5F1C6D397C0093BB95 /* EonilFileSystemEvents.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = EonilFileSystemEvents.xcodeproj; path = FileSystemEvents/Project/EonilFileSystemEvents.xcodeproj; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -49,6 +93,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				00CD1F6E1C6D398E0093BB95 /* EonilFileSystemEvents.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -65,6 +110,7 @@
 		00CD1F2A1C6CEAD80093BB95 = {
 			isa = PBXGroup;
 			children = (
+				00CD1F5F1C6D397C0093BB95 /* EonilFileSystemEvents.xcodeproj */,
 				00CD1F351C6CEAD80093BB95 /* SquidBar */,
 				00CD1F451C6CEAD80093BB95 /* SquidBarTests */,
 				00CD1F341C6CEAD80093BB95 /* Products */,
@@ -105,6 +151,17 @@
 			path = SquidBarTests;
 			sourceTree = "<group>";
 		};
+		00CD1F601C6D397C0093BB95 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				00CD1F671C6D397C0093BB95 /* EonilFileSystemEvents.framework */,
+				00CD1F691C6D397C0093BB95 /* InternalTester */,
+				00CD1F6B1C6D397C0093BB95 /* InternalTester4.app */,
+				00CD1F6D1C6D397C0093BB95 /* TestdriveApp.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -115,6 +172,7 @@
 				00CD1F2F1C6CEAD80093BB95 /* Sources */,
 				00CD1F301C6CEAD80093BB95 /* Frameworks */,
 				00CD1F311C6CEAD80093BB95 /* Resources */,
+				00CD1F6F1C6D399B0093BB95 /* CopyFiles */,
 			);
 			buildRules = (
 			);
@@ -173,6 +231,12 @@
 			mainGroup = 00CD1F2A1C6CEAD80093BB95;
 			productRefGroup = 00CD1F341C6CEAD80093BB95 /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 00CD1F601C6D397C0093BB95 /* Products */;
+					ProjectRef = 00CD1F5F1C6D397C0093BB95 /* EonilFileSystemEvents.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				00CD1F321C6CEAD80093BB95 /* SquidBar */,
@@ -180,6 +244,37 @@
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		00CD1F671C6D397C0093BB95 /* EonilFileSystemEvents.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = EonilFileSystemEvents.framework;
+			remoteRef = 00CD1F661C6D397C0093BB95 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		00CD1F691C6D397C0093BB95 /* InternalTester */ = {
+			isa = PBXReferenceProxy;
+			fileType = "compiled.mach-o.executable";
+			path = InternalTester;
+			remoteRef = 00CD1F681C6D397C0093BB95 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		00CD1F6B1C6D397C0093BB95 /* InternalTester4.app */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.application;
+			path = InternalTester4.app;
+			remoteRef = 00CD1F6A1C6D397C0093BB95 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		00CD1F6D1C6D397C0093BB95 /* TestdriveApp.app */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.application;
+			path = TestdriveApp.app;
+			remoteRef = 00CD1F6C1C6D397C0093BB95 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		00CD1F311C6CEAD80093BB95 /* Resources */ = {

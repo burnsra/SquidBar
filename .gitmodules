@@ -1,0 +1,3 @@
+[submodule "FileSystemEvents"]
+	path = FileSystemEvents
+	url = git@github.com:burnsra/FileSystemEvents.git

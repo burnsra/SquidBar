@@ -22,6 +22,7 @@ struct Global {
         static let statusListening: String = "Listening on"
         static let statusUnknown: String = "Getting status..."
         static let statusStarting: String = "Server starting..."
+        static let statusRestartingDNS: String = "Restarting due to DNS changes..."
     }
 
 
