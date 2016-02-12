@@ -13,7 +13,7 @@ private let squidConfigurationKey = "squidConfiguration"
 private let squidLaunchKey = "squidStartOnLaunch"
 private let squidWatchNetworkKey = "squidWatchNetwork"
 
-class PreferenceManager {
+class PreferenceController {
 
     private let userDefaults = NSUserDefaults.standardUserDefaults()
 

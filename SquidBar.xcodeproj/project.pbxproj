@@ -15,6 +15,7 @@
 		00CD1F541C6CF7390093BB95 /* PreferencesController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00CD1F531C6CF7390093BB95 /* PreferencesController.swift */; };
 		00CD1F561C6CFCD30093BB95 /* LoginHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00CD1F551C6CFCD30093BB95 /* LoginHelper.swift */; };
 		00CD1F581C6CFFF40093BB95 /* UtilsHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00CD1F571C6CFFF40093BB95 /* UtilsHelper.swift */; };
+		00CD1F5A1C6D085A0093BB95 /* SquidController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00CD1F591C6D085A0093BB95 /* SquidController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +41,7 @@
 		00CD1F531C6CF7390093BB95 /* PreferencesController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PreferencesController.swift; sourceTree = "<group>"; };
 		00CD1F551C6CFCD30093BB95 /* LoginHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginHelper.swift; sourceTree = "<group>"; };
 		00CD1F571C6CFFF40093BB95 /* UtilsHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UtilsHelper.swift; sourceTree = "<group>"; };
+		00CD1F591C6D085A0093BB95 /* SquidController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SquidController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -89,6 +91,7 @@
 				00CD1F531C6CF7390093BB95 /* PreferencesController.swift */,
 				00CD1F551C6CFCD30093BB95 /* LoginHelper.swift */,
 				00CD1F571C6CFFF40093BB95 /* UtilsHelper.swift */,
+				00CD1F591C6D085A0093BB95 /* SquidController.swift */,
 			);
 			path = SquidBar;
 			sourceTree = "<group>";
@@ -206,6 +209,7 @@
 				00CD1F561C6CFCD30093BB95 /* LoginHelper.swift in Sources */,
 				00CD1F521C6CEC460093BB95 /* GlobalsHelper.swift in Sources */,
 				00CD1F581C6CFFF40093BB95 /* UtilsHelper.swift in Sources */,
+				00CD1F5A1C6D085A0093BB95 /* SquidController.swift in Sources */,
 				00CD1F371C6CEAD80093BB95 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
