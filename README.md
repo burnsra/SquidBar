@@ -41,6 +41,22 @@ $ brew cask install squidbar
 - OS X 10.10
 - [Squid](http://www.squid-cache.org/)
 
+## Building
+
+```sh
+$ git clone https://github.com/burnsra/SquidBar.git
+$ cd SquidBar
+$ git submodule init
+$ git submodule update
+$ xcodebuild clean build test archive -project SquidBar.xcodeproj -scheme SquidBar
+```
+
+Build should be at available at the following (date/time stamps change):
+
+```sh
+~/Library/Developer/Xcode/Archives/2016-02-11]/SquidBar 2-11-16, 9.15 AM.xcarchive/Products
+```
+
 ## Configuration
 
 1. Go to Preferences
