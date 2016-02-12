@@ -1,0 +1,16 @@
+language: objective-c
+
+branches:
+  only:
+  - master
+
+before_install:
+  - brew update
+
+xcode_project: SquidBar.xcodeproj
+xcode_scheme: SquidBar
+osx_image: xcode7.3
+xcode_sdk: macosx10.11
+
+script:
+  xcodebuild clean build test -project SquidBar.xcodeproj -scheme SquidBar
