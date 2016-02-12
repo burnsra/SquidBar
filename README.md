@@ -20,6 +20,10 @@ Preferences Window
 
 <img style="max-width:75%;" src="https://github.com/burnsra/SquidBar/blob/master/assets/preferences_window.png" />
 
+## Downloads
+
+[Releases](https://github.com/burnsra/SquidBar/releases)
+
 ## Requirements
 
 - OS X 10.10
