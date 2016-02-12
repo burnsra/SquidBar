@@ -6,6 +6,7 @@
 //  Copyright © 2016 Robert Burns. All rights reserved.
 //
 
+import Cocoa
 import Foundation
 
 func showNotification(message: String) -> Void {
@@ -22,4 +23,29 @@ func delay(delay: Double, closure:()->()) {
             Int64(delay * Double(NSEC_PER_SEC))
         ),
         dispatch_get_main_queue(), closure)
+}
+
+func getDir(canChooseFiles: Bool, canChooseDirectories: Bool) -> String {
+    let browser: NSOpenPanel = NSOpenPanel()
+
+    browser.allowsMultipleSelection = false
+    browser.canChooseFiles = canChooseFiles
+    browser.canChooseDirectories = canChooseDirectories
+
+    let i = browser.runModal()
+
+    let url = browser.URL
+    let path: String
+
+    if (url != nil) {
+        path = url!.path!
+    } else {
+        path = ""
+    }
+
+    if (i == NSModalResponseOK) {
+        return path
+    } else {
+        return ""
+    }
 }

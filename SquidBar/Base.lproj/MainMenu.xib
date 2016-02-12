@@ -14,11 +14,15 @@
         <customObject id="-3" userLabel="Application" customClass="NSObject"/>
         <customObject id="Voe-Tx-rLC" customClass="AppDelegate" customModule="SquidBar" customModuleProvider="target">
             <connections>
+                <outlet property="configurationFileTextfield" destination="mlH-Id-Jrp" id="6Jy-S9-JAk"/>
+                <outlet property="executableFileTextField" destination="jHG-sK-QbK" id="tN1-4J-y5H"/>
                 <outlet property="preferencesWindow" destination="cTL-ay-T7S" id="C7a-cb-wRe"/>
                 <outlet property="serverStartMenuItem" destination="FYs-Az-aDL" id="5ta-8Z-cqm"/>
                 <outlet property="serverStatusMenuItem" destination="g4w-l2-lc3" id="r56-4U-org"/>
                 <outlet property="serverStopMenuItem" destination="CP2-CI-jAz" id="qKH-o7-PH5"/>
+                <outlet property="startOnLaunchCheckBox" destination="fov-G3-QB7" id="ixk-Z2-9NY"/>
                 <outlet property="statusMenu" destination="6Dc-aH-bfw" id="lEb-cI-TWP"/>
+                <outlet property="watchNetworkCheckBox" destination="Fs9-rK-w9J" id="a5P-3T-stK"/>
             </connections>
         </customObject>
         <customObject id="YLy-65-1bz" customClass="NSFontManager"/>
@@ -105,6 +109,9 @@
 DQ
 </string>
                                     </buttonCell>
+                                    <connections>
+                                        <action selector="browseExecutableLoc:" target="Voe-Tx-rLC" id="gus-HI-Hwm"/>
+                                    </connections>
                                 </button>
                                 <textField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="mlH-Id-Jrp" userLabel="Squid Configuration File">
                                     <rect key="frame" x="20" y="150" width="327" height="22"/>
@@ -131,13 +138,9 @@ DQ
 DQ
 </string>
                                     </buttonCell>
-                                </button>
-                                <button toolTip="Start squid when this application is run" fixedFrame="YES" allowsExpansionToolTips="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fov-G3-QB7">
-                                    <rect key="frame" x="18" y="18" width="111" height="18"/>
-                                    <buttonCell key="cell" type="check" title="Start at launch" bezelStyle="regularSquare" imagePosition="left" inset="2" id="vqd-Nt-2of">
-                                        <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
-                                        <font key="font" metaFont="system"/>
-                                    </buttonCell>
+                                    <connections>
+                                        <action selector="browseConfigurationLoc:" target="Voe-Tx-rLC" id="kee-KO-QXs"/>
+                                    </connections>
                                 </button>
                                 <textField hidden="YES" horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="59Z-Cn-b1f">
                                     <rect key="frame" x="18" y="114" width="408" height="17"/>
@@ -161,6 +164,19 @@ DQ
                                         <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                                         <font key="font" metaFont="system"/>
                                     </buttonCell>
+                                    <connections>
+                                        <action selector="watchNetwork:" target="Voe-Tx-rLC" id="PHM-Hg-k8U"/>
+                                    </connections>
+                                </button>
+                                <button toolTip="Start squid when this application is run" fixedFrame="YES" allowsExpansionToolTips="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fov-G3-QB7">
+                                    <rect key="frame" x="18" y="18" width="111" height="18"/>
+                                    <buttonCell key="cell" type="check" title="Start at launch" bezelStyle="regularSquare" imagePosition="left" inset="2" id="vqd-Nt-2of">
+                                        <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                        <font key="font" metaFont="system"/>
+                                    </buttonCell>
+                                    <connections>
+                                        <action selector="startOnLaunch:" target="Voe-Tx-rLC" id="pPI-fe-bhz"/>
+                                    </connections>
                                 </button>
                             </subviews>
                         </view>
@@ -173,6 +189,9 @@ DQ
                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                             <font key="font" metaFont="system"/>
                         </buttonCell>
+                        <connections>
+                            <action selector="resetPreferences:" target="Voe-Tx-rLC" id="HYZ-p1-aaw"/>
+                        </connections>
                     </button>
                     <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Cgr-QF-NdG">
                         <rect key="frame" x="95" y="20" width="367" height="17"/>
