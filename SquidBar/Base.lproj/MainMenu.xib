@@ -26,7 +26,7 @@
             </connections>
         </customObject>
         <customObject id="YLy-65-1bz" customClass="NSFontManager"/>
-        <menu title="SquidLauncher Menu" id="6Dc-aH-bfw" userLabel="Status Menu">
+        <menu title="SquidBar Menu" id="6Dc-aH-bfw" userLabel="Status Menu">
             <items>
                 <menuItem title="Getting status..." id="g4w-l2-lc3">
                     <modifierMask key="keyEquivalentModifierMask"/>
@@ -73,7 +73,7 @@
             </items>
             <point key="canvasLocation" x="809.5" y="204.5"/>
         </menu>
-        <window title="SquidLauncher Preferences" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" oneShot="NO" releasedWhenClosed="NO" showsToolbarButton="NO" visibleAtLaunch="NO" animationBehavior="default" id="cTL-ay-T7S" userLabel="Preferences Window">
+        <window title="SquidBar Preferences" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" oneShot="NO" releasedWhenClosed="NO" showsToolbarButton="NO" visibleAtLaunch="NO" animationBehavior="default" id="cTL-ay-T7S" userLabel="Preferences Window">
             <windowStyleMask key="styleMask" titled="YES" closable="YES"/>
             <rect key="contentRect" x="335" y="390" width="480" height="360"/>
             <rect key="screenRect" x="0.0" y="0.0" width="1920" height="1177"/>
@@ -181,6 +181,10 @@ DQ
                                         <action selector="startOnLaunch:" target="Voe-Tx-rLC" id="pPI-fe-bhz"/>
                                     </connections>
                                 </button>
+                                <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="puo-gj-zxU">
+                                    <rect key="frame" x="355" y="20" width="69" height="69"/>
+                                    <imageCell key="cell" refusesFirstResponder="YES" alignment="left" animates="YES" imageScaling="proportionallyDown" image="NSApplicationIcon" id="NMl-gV-Gcq"/>
+                                </imageView>
                             </subviews>
                         </view>
                         <color key="borderColor" white="0.0" alpha="0.41999999999999998" colorSpace="calibratedWhite"/>
@@ -198,7 +202,7 @@ DQ
                     </button>
                     <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Cgr-QF-NdG">
                         <rect key="frame" x="95" y="20" width="367" height="17"/>
-                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="left" title="Reset  preferences" id="pLx-89-n4J">
+                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="left" title="Reset preferences" id="pLx-89-n4J">
                             <font key="font" metaFont="smallSystem"/>
                             <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                             <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
@@ -219,4 +223,7 @@ DQ
             <point key="canvasLocation" x="337" y="205"/>
         </window>
     </objects>
+    <resources>
+        <image name="NSApplicationIcon" width="128" height="128"/>
+    </resources>
 </document>
