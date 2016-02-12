@@ -40,6 +40,10 @@ After installing Squid with **[Homebrew](http://brew.sh/)**
 
 Do you want to improve the app or add any useful features? Please go ahead and create pull requests. I'm thankful for any help.
 
+## Acknowledgements
+
+- [FileSystemEvents](https://github.com/Eonil/FileSystemEvents) framework by [Hoon H.](drawtree@gmail.com)
+
 ## License
 
 [MIT](https://github.com/burnsra/SquidBar/blob/master/LICENSE) © Robert Burns
