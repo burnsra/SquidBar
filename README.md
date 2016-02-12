@@ -13,10 +13,12 @@
 ## Screenshots
 
 Status Menu
+
 <img style="max-width:100%;" src="https://github.com/burnsra/SquidBar/blob/master/assets/status_menu.png" />
 
 Preferences Window
-<img style="max-width:100%;" src="https://github.com/burnsra/SquidBar/blob/master/assets/preferences_window.png" />
+
+<img style="max-width:75%;" src="https://github.com/burnsra/SquidBar/blob/master/assets/preferences_window.png" />
 
 ## Requirements
 
