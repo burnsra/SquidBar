@@ -20,9 +20,21 @@ Preferences Window
 
 <img style="max-width:75%;" src="https://github.com/burnsra/SquidBar/blob/master/assets/preferences_window.png" />
 
-## Downloads
+## Installation
 
-[Releases](https://github.com/burnsra/SquidBar/releases)
+After you install homebrew-cask, run the following command:
+
+```sh
+$ brew tap burnsra/personal
+```
+
+You can now install the squidbar cask.
+
+```sh
+$ brew cask install squidbar
+```
+
+[Direct Downloads](https://github.com/burnsra/SquidBar/releases)
 
 ## Requirements
 
