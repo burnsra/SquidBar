@@ -490,6 +490,7 @@
 				00CD1F4D1C6CEAD80093BB95 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		00CD1F4E1C6CEAD80093BB95 /* Build configuration list for PBXNativeTarget "SquidBarTests" */ = {
 			isa = XCConfigurationList;
@@ -498,6 +499,7 @@
 				00CD1F501C6CEAD80093BB95 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
