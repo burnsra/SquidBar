@@ -33,17 +33,24 @@ class SquidController: NSObject {
 
     func startSquid() {
         if !self.isSquidRunning() {
+            NSLog("\(Global.Application.statusStarting)")
             let taskStart = NSTask()
             taskStart.launchPath = preferenceController.squidExecutable
             taskStart.arguments = squidStartupArgs
             taskStart.arguments?.append("-f")
             taskStart.arguments?.append(preferenceController.squidConfiguration!)
             taskStart.launch()
+            taskStart.waitUntilExit()
+            NSLog("\(Global.Application.statusStarted)")
+            if let port = self.getPort() {
+                NSLog("\(Global.Application.statusListening) \(port)")
+            }
         }
     }
 
     func stopSquid() {
         if self.isSquidRunning() {
+            NSLog("\(Global.Application.statusStopping)")
             let taskStop = NSTask()
             taskStop.launchPath = preferenceController.squidExecutable
             taskStop.arguments = squidShutdownArgs
@@ -51,6 +58,7 @@ class SquidController: NSObject {
             taskStop.arguments?.append(preferenceController.squidConfiguration!)
             taskStop.launch()
             taskStop.waitUntilExit()
+            NSLog("\(Global.Application.statusStopped)")
         }
     }
 

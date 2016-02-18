@@ -34,9 +34,12 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 
     func applicationDidFinishLaunching(aNotification: NSNotification) {
         // Insert code here to initialize your application
-        if !squidController.isSquidRunning() {
-            if (preferenceController.squidStartOnLaunch == true) {
-                showNotification(Global.Application.statusStarting)
+        if (preferenceController.squidStartOnLaunch == true) {
+            if (squidController.isSquidRunning()) {
+                if let port = squidController.getPort() {
+                    NSLog("\(Global.Application.statusListening) \(port)")
+                }
+            } else {
                 squidController.startSquid()
             }
         }
@@ -51,9 +54,15 @@ class AppDelegate: NSObject, NSApplicationDelegate {
             dispatch_async(dispatch_get_main_queue()) {
                 for ev in events {
                     if (ev.path.containsString("resolv.conf")) {
-                        showNotification(Global.Application.statusRestartingDNS)
                         if (self.preferenceController.squidWatchNetwork == true) {
-                            self.squidController.restartSquid()
+                            if (ev.flag.description.stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceCharacterSet()) == "ItemRemoved") {
+                                // Add a delay so DNS entries are updated for the network change
+                                delay(5) {
+                                    showNotification(Global.Application.statusRestartingDNS)
+                                    NSLog("\(Global.Application.statusRestartingDNS)")
+                                    self.squidController.restartSquid()
+                                }
+                            }
                         }
                     }
                 }
