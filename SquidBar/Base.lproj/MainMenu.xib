@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="9532" systemVersion="15E39d" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="9532" systemVersion="15E39c" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="9532"/>
         <capability name="box content view" minToolsVersion="7.0"/>
@@ -16,6 +16,7 @@
             <connections>
                 <outlet property="configurationFileTextfield" destination="mlH-Id-Jrp" id="6Jy-S9-JAk"/>
                 <outlet property="executableFileTextField" destination="jHG-sK-QbK" id="tN1-4J-y5H"/>
+                <outlet property="launchOnLoginCheckBox" destination="T0f-uf-nnJ" id="GU0-JI-d5W"/>
                 <outlet property="preferencesWindow" destination="cTL-ay-T7S" id="C7a-cb-wRe"/>
                 <outlet property="serverStartMenuItem" destination="FYs-Az-aDL" id="5ta-8Z-cqm"/>
                 <outlet property="serverStatusMenuItem" destination="g4w-l2-lc3" id="r56-4U-org"/>
@@ -74,7 +75,7 @@
         <window title="SquidBar Preferences" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" oneShot="NO" releasedWhenClosed="NO" showsToolbarButton="NO" visibleAtLaunch="NO" animationBehavior="default" id="cTL-ay-T7S" userLabel="Preferences Window">
             <windowStyleMask key="styleMask" titled="YES" closable="YES"/>
             <rect key="contentRect" x="335" y="390" width="480" height="360"/>
-            <rect key="screenRect" x="0.0" y="0.0" width="1920" height="1177"/>
+            <rect key="screenRect" x="0.0" y="0.0" width="1680" height="1027"/>
             <view key="contentView" id="JqZ-OM-rON">
                 <rect key="frame" x="0.0" y="0.0" width="480" height="360"/>
                 <autoresizingMask key="autoresizingMask"/>
@@ -206,14 +207,14 @@ DQ
                             <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                         </textFieldCell>
                     </textField>
-                    <button toolTip="Adds this application to your login items" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ijE-4y-mHA">
-                        <rect key="frame" x="329" y="13" width="137" height="32"/>
-                        <buttonCell key="cell" type="push" title="Launch at Login" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="TyG-gz-4OU">
-                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                    <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="T0f-uf-nnJ" userLabel="Launch on Login Check Box">
+                        <rect key="frame" x="340" y="22" width="122" height="18"/>
+                        <buttonCell key="cell" type="check" title="Launch on Login" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="KJs-Ma-tbt">
+                            <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                             <font key="font" metaFont="system"/>
                         </buttonCell>
                         <connections>
-                            <action selector="toggleLoginItem:" target="Voe-Tx-rLC" id="uV9-9c-yH2"/>
+                            <action selector="launchOnLogin:" target="Voe-Tx-rLC" id="1PE-C5-YLS"/>
                         </connections>
                     </button>
                 </subviews>

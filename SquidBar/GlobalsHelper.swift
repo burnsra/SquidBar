@@ -21,12 +21,13 @@ struct Global {
         static let squidProcess: String = "squid"
 
         static let statusListening: String = "Server listening on"
-        static let statusUnknown: String = "Getting status..."
+        static let statusUnknown: String = "Getting server status..."
         static let statusStarting: String = "Server starting..."
         static let statusStopping: String = "Server stopping..."
+        static let statusForceStop: String = "Server force stop required..."
         static let statusStarted: String = "Server started"
         static let statusStopped: String = "Server stopped"
-        static let statusRestartingDNS: String = "Restarting due to DNS changes..."
+        static let statusRestartingNetwork: String = "Server restarting due to network changes"
     }
 
 

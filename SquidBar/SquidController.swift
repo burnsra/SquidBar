@@ -10,9 +10,13 @@ import Cocoa
 
 class SquidController: NSObject {
 
+    private var squid: NSTask?
+    private var active: Bool?
+    private var restarting: Bool?
+
     let preferenceController = PreferenceController()
-    let squidStartupArgs = ["-s","-d","1"]
-    let squidShutdownArgs = ["-s","-d","1","-k","shutdown"]
+    let squidStartupArgs = ["-s", "-N"]
+    let squidShutdownArgs = ["-k","shutdown"]
 
     func isSquidRunning() -> Bool {
         let taskRunning = NSTask()
@@ -34,38 +38,55 @@ class SquidController: NSObject {
     func startSquid() {
         if !self.isSquidRunning() {
             NSLog("\(Global.Application.statusStarting)")
-            let taskStart = NSTask()
-            taskStart.launchPath = preferenceController.squidExecutable
-            taskStart.arguments = squidStartupArgs
-            taskStart.arguments?.append("-f")
-            taskStart.arguments?.append(preferenceController.squidConfiguration!)
-            taskStart.launch()
-            taskStart.waitUntilExit()
+            let squid = NSTask()
+            let pipe = NSPipe()
+            squid.launchPath = preferenceController.squidExecutable
+            squid.arguments = squidStartupArgs
+            squid.arguments?.append("-f")
+            squid.arguments?.append(preferenceController.squidConfiguration!)
+            squid.standardOutput = pipe
+            squid.launch()
+            active = true
+            restarting = false
+            self.squid = squid
             NSLog("\(Global.Application.statusStarted)")
             if let port = self.getPort() {
                 NSLog("\(Global.Application.statusListening) \(port)")
             }
+        } else {
+            active = true
         }
     }
 
     func stopSquid() {
         if self.isSquidRunning() {
             NSLog("\(Global.Application.statusStopping)")
-            let taskStop = NSTask()
-            taskStop.launchPath = preferenceController.squidExecutable
-            taskStop.arguments = squidShutdownArgs
-            taskStop.arguments?.append("-f")
-            taskStop.arguments?.append(preferenceController.squidConfiguration!)
-            taskStop.launch()
-            taskStop.waitUntilExit()
+            if ((squid?.running) != nil) {
+                guard let squid = squid else {
+                    return
+                }
+                squid.terminate()
+                squid.waitUntilExit()
+            } else {
+                NSLog("\(Global.Application.statusForceStop)")
+                let taskStop = NSTask()
+                taskStop.launchPath = preferenceController.squidExecutable
+                taskStop.arguments = squidShutdownArgs
+                taskStop.launch()
+                taskStop.waitUntilExit()
+            }
+            active = false
             NSLog("\(Global.Application.statusStopped)")
         }
     }
 
     func restartSquid() {
-        self.stopSquid()
-        delay(6) {
-            self.startSquid()
+        if restarting != true {
+            restarting = true
+            self.stopSquid()
+            delay(8) {
+                self.startSquid()
+            }
         }
     }
 

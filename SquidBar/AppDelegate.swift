@@ -23,6 +23,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     @IBOutlet weak var executableFileTextField: NSTextField!
     @IBOutlet weak var startOnLaunchCheckBox: NSButton!
     @IBOutlet weak var watchNetworkCheckBox: NSButton!
+    @IBOutlet weak var launchOnLoginCheckBox: NSButton!
 
     let statusItem = NSStatusBar.systemStatusBar().statusItemWithLength(NSVariableStatusItemLength)
     let preferenceController = PreferenceController()
@@ -53,14 +54,19 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         let	onEvents = { (events:[FileSystemEvent]) -> () in
             dispatch_async(dispatch_get_main_queue()) {
                 for ev in events {
-                    if (ev.path.containsString("resolv.conf")) {
-                        if (self.preferenceController.squidWatchNetwork == true) {
-                            if (ev.flag.description.stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceCharacterSet()) == "ItemRemoved") {
+                    if (self.preferenceController.squidWatchNetwork == true) {
+                        if (ev.path.containsString("resolv.conf")) {
+                            if (ev.flag.description.rangeOfString("ItemRenamed") != nil) {
                                 // Add a delay so DNS entries are updated for the network change
-                                delay(5) {
-                                    showNotification(Global.Application.statusRestartingDNS)
-                                    NSLog("\(Global.Application.statusRestartingDNS)")
-                                    self.squidController.restartSquid()
+                                delay(1) {
+                                    let nameServers = self.getNameServers(ev.path)
+                                    if (nameServers != nil) {
+                                        showNotification(Global.Application.statusRestartingNetwork)
+                                        NSLog("\(Global.Application.statusRestartingNetwork)")
+                                        //NSLog("..\(ev.flag.description) (\(ev.path))")
+                                        NSLog("Server DNS entries (\(nameServers!))")
+                                        self.squidController.restartSquid()
+                                    }
                                 }
                             }
                         }
@@ -68,7 +74,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
                 }
             }
         }
-        monitor	= FileSystemEventMonitor(pathsToWatch: ["/etc/resolv.conf", "/private/var/run/resolv.conf"], latency: 0, watchRoot: false, queue: queue, callback: onEvents)
+        monitor	= FileSystemEventMonitor(pathsToWatch: ["/etc/resolv.conf", "/private/var/run/resolv.conf"], latency: 1, watchRoot: false, queue: queue, callback: onEvents)
 
         updateStatusMenuItems()
     }
@@ -91,12 +97,12 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         statusItem.toolTip = "\(Global.Application.bundleName) \(Global.Application.bundleVersion)"
     }
 
-    @IBAction func toggleLoginItem(sender: NSButton) {
-        setLaunchAtStartup(Bool(sender.state))
-    }
-
     @IBAction func clickQuit(sender: NSMenuItem) {
-        NSApplication.sharedApplication().terminate(self)
+        monitor	= nil
+        squidController.stopSquid()
+        delay(4) {
+            NSApplication.sharedApplication().terminate(self)
+        }
     }
 
     @IBAction func openAbout(sender: NSMenuItem) {
@@ -137,6 +143,12 @@ class AppDelegate: NSObject, NSApplicationDelegate {
                 watchNetworkCheckBox.state = NSOffState
             }
         }
+
+        if applicationIsInStartUpItems() == true {
+            launchOnLoginCheckBox.state = NSOnState
+        } else {
+            launchOnLoginCheckBox.state = NSOffState
+        }
     }
 
     @IBAction func resetPreferences(sender: NSButton) {
@@ -176,6 +188,10 @@ class AppDelegate: NSObject, NSApplicationDelegate {
             preferenceController.squidStartOnLaunch = false
         }
         preferenceController.synchronizePreferences()
+    }
+
+    @IBAction func launchOnLogin(sender: NSButton) {
+        setLaunchAtStartup(Bool(sender.state))
     }
 
     @IBAction func watchNetwork(sender: NSButton) {
@@ -226,6 +242,32 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         }
     }
 
+    func getNameServers(file: String) -> String? {
+        let resolveFile = file
+        var nameServers = ""
+
+        do {
+            let content = try String(contentsOfFile: resolveFile, encoding: NSUTF8StringEncoding)
+            let contentArray = content.componentsSeparatedByString("\n")
+
+            for (_, element) in contentArray.enumerate() {
+                let lineContent = element.stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceCharacterSet())
+
+                if ((lineContent.rangeOfString("nameserver") != nil)) {
+                    if let port = lineContent.componentsSeparatedByString(" ").last {
+                        if (nameServers.characters.count > 1) {
+                            nameServers.appendContentsOf(",")
+                        }
+                    nameServers.appendContentsOf(port.stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceCharacterSet()))
+                    }
+                }
+            }
+            return nameServers
+        } catch _ as NSError {
+            return nil
+        }
+        return nil
+    }
 
 }
 
