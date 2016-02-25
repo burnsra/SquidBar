@@ -28,6 +28,10 @@ struct Global {
         static let statusStarted: String = "Server started"
         static let statusStopped: String = "Server stopped"
         static let statusRestartingNetwork: String = "Server restarting due to network changes"
+        static let statusNetworkChange: String = "Network change detected"
+        static let statusNetworkChangeValid: String = "Valid network change confirmed"
+        static let statusNetworkChangeInvalid: String = "Invalid network change confirmed"
+        static let statusNetworkChangeFlag: String = "File flag description:"
     }
 
 
