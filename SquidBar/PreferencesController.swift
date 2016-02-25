@@ -18,7 +18,7 @@ class PreferenceController {
     private let userDefaults = NSUserDefaults.standardUserDefaults()
 
     func registerDefaultPreferences() {
-        let defaults = [ squidExecutableKey : "/usr/local/opt/squid/sbin/squid", squidConfigurationKey  : "/usr/local/etc/squid.conf", squidLaunchKey : false, squidWatchNetworkKey : false ]
+        let defaults = [ squidExecutableKey : "/usr/local/opt/squid/sbin/squid", squidConfigurationKey  : "/usr/local/etc/squid.conf", squidLaunchKey : false, squidWatchNetworkKey : true ]
         userDefaults.registerDefaults(defaults)
     }
 
