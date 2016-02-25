@@ -36,11 +36,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     func applicationDidFinishLaunching(aNotification: NSNotification) {
         // Insert code here to initialize your application
         if (preferenceController.squidStartOnLaunch == true) {
-            if (squidController.isSquidRunning()) {
-                if let port = squidController.getPort() {
-                    NSLog("\(Global.Application.statusListening) \(port)")
-                }
-            } else {
+            if (!squidController.isSquidRunning()) {
                 squidController.startSquid()
             }
         }
@@ -55,20 +51,23 @@ class AppDelegate: NSObject, NSApplicationDelegate {
             dispatch_async(dispatch_get_main_queue()) {
                 for ev in events {
                     if (self.preferenceController.squidWatchNetwork == true) {
-                        if (ev.path.containsString("resolv.conf")) {
-                            if (ev.flag.description.rangeOfString("ItemRenamed") != nil) {
-                                // Add a delay so DNS entries are updated for the network change
-                                delay(1) {
-                                    let nameServers = self.getNameServers(ev.path)
-                                    if (nameServers != nil) {
-                                        showNotification(Global.Application.statusRestartingNetwork)
-                                        NSLog("\(Global.Application.statusRestartingNetwork)")
-                                        //NSLog("..\(ev.flag.description) (\(ev.path))")
-                                        NSLog("Server DNS entries (\(nameServers!))")
-                                        self.squidController.restartSquid()
-                                    }
+                        NSLog("\(Global.Application.statusNetworkChange)")
+                        if (ev.flag.description.rangeOfString("ItemRenamed") != nil) {
+                            NSLog("\(Global.Application.statusNetworkChangeValid)")
+                            // Add a delay so DNS entries are updated for the network change
+                            delay(1) {
+                                let nameServers = self.getNameServers(ev.path)
+                                if (nameServers != nil) {
+                                    showNotification(Global.Application.statusRestartingNetwork)
+                                    NSLog("\(Global.Application.statusRestartingNetwork)")
+                                    //NSLog("..\(ev.flag.description) (\(ev.path))")
+                                    NSLog("Server DNS entries (\(nameServers!))")
+                                    self.squidController.restartSquid()
                                 }
                             }
+                        } else {
+                            NSLog("\(Global.Application.statusNetworkChangeValid)")
+                            NSLog("\(Global.Application.statusNetworkChangeFlag) \(ev.flag.description)")
                         }
                     }
                 }
@@ -266,7 +265,6 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         } catch _ as NSError {
             return nil
         }
-        return nil
     }
 
 }
